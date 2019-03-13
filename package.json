@@ -1,0 +1,16 @@
+{
+  "name": "netbridge",
+  "version": "1.0.0",
+  "author": "duzc2",
+  "description": "bridge 2 networks",
+  "scripts": {
+    "trans": "node netbridge -l 80 -t www.baidu.com:80",
+    "server": "node netbridge -l 80 -c 9999",
+    "client": "node netbridge -s 127.0.0.1:9999 -t 127.0.0.1:80"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "ws": "^6.2.0"
+  }
+}
