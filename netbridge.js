@@ -42,6 +42,9 @@ if (argv.c) {
     let handles = {
         end: function (data, sSocket, wsClient) {
             sSocket.end()
+        },
+        data: function (data, sSocket, wsClient) {
+            sSocket.write(data.data)
         }
     }
 
