@@ -22,7 +22,7 @@ module.exports = function (argv, soEmitter) {
             let socket = new DummySocket()
             let id = data.id
             socket.end = function () {
-                if (wsClient.readyState == WebSocket.OPEN) {
+                if (ws.readyState == WebSocket.OPEN) {
                     ws.send(JSON.stringify({
                         cmd: 'end',
                         id: id
