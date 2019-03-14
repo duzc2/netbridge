@@ -4,6 +4,7 @@ module.exports = function (argv, soEmitter) {
     let sSockets = {}
     let socketId = 0;
     let wsClient = null
+    console.log('ws server on port:' + argv.s)
     const wss = new WebSocket.Server({
         port: argv.s
     });
