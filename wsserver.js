@@ -66,7 +66,7 @@ module.exports = function (argv, soEmitter) {
         }
         wsClient.on('close', onClientClose)
         sSocket.on('end', () => {
-            wsClient.off('close', onClientClose)
+            // wsClient.off('close', onClientClose)
             if (wsClient.readyState == WebSocket.OPEN) {
                 wsClient.send(JSON.stringify({
                     cmd: 'end',
