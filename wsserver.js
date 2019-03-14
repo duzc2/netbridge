@@ -43,6 +43,7 @@ module.exports = function (argv, soEmitter) {
         if (!wsClient) {
             sSocket.end()
             console.log("没有客户端连接，断开请求")
+            return
         }
         let ws_id = socketId++
         sSocket.ws_id = ws_id
