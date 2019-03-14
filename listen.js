@@ -1,10 +1,12 @@
-
 const net = require('net');
 
-module.exports = function (argv,soEmitter) {
+module.exports = function (argv, soEmitter) {
     const server = net.createServer({}, (socket) => {
         console.log('connection')
         // console.log(socket)
+        socket.on('error', (e) => {
+            //console.error(e)
+        })
         soEmitter.emit('connection', socket)
     });
     server.on('error', (e) => {
