@@ -40,6 +40,10 @@ module.exports = function (argv, soEmitter) {
         wsClient = null
     })
     soEmitter.on('connection', (sSocket) => {
+        if (!wsClient) {
+            sSocket.end()
+            console.log("没有客户端连接，断开请求")
+        }
         let ws_id = socketId++
         sSocket.ws_id = ws_id
         sSockets[ws_id] = sSocket
