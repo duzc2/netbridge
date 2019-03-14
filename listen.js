@@ -13,7 +13,7 @@ module.exports = function (argv, soEmitter) {
         console.log('server error')
         console.log(e)
     })
-    server.listen(argv.l, () => {
+    server.listen(argv.l,'0.0.0.0', () => {
         console.log('server bound on port ' + argv.l)
     });
 }
