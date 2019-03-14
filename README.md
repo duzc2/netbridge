@@ -8,8 +8,8 @@ node netbridge -l 80 -t www.baidu.com:80
 
 跨网段转发：
     服务端：
-    node netbridge -l 80 -c 9999
+    node netbridge -l 80 -s 9999
 
     客户端:
-    node netbridge -s 127.0.0.1:9999 -t 127.0.0.1:80
+    node netbridge -c 127.0.0.1:9999 -t 127.0.0.1:80
 

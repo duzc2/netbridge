@@ -5,8 +5,8 @@
   "description": "bridge 2 networks",
   "scripts": {
     "trans": "node netbridge -l 80 -t www.baidu.com:80",
-    "server": "node netbridge -l 80 -c 9999",
-    "client": "node netbridge -s 127.0.0.1:9999 -t 127.0.0.1:80"
+    "server": "node netbridge -l 80 -s 9999",
+    "client": "node netbridge -c 9999 -t www.aliyun.com:80"
   },
   "license": "MIT",
   "dependencies": {

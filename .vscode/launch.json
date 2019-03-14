@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [{
+        "type": "node",
+        "request": "launch",
+        "name": "转发百度",
+        "program": "${workspaceFolder}\\netbridge.js",
+        "args": ["-l", "80", "-t", "www.baidu.com:80"]
+    }, {
+        "type": "node",
+        "request": "launch",
+        "name": "服务 80>9999",
+        "program": "${workspaceFolder}\\netbridge.js",
+        "args": ["-l", "80", "-s", "9999"]
+    }, {
+        "type": "node",
+        "request": "launch",
+        "name": "客户端 9999>百度",
+        "program": "${workspaceFolder}\\netbridge.js",
+        "args": ["-c", "9999", "-t", "www.baidu.com:80"]
+    }]
+}
