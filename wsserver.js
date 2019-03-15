@@ -1,4 +1,14 @@
 const WebSocket = require('ws');
+
+function Uint8ArrayToString(fileData) {
+    var dataString = "";
+    for (var i = 0; i < fileData.length; i++) {
+        dataString += String.fromCharCode(fileData[i]);
+    }
+
+    return dataString
+
+}
 module.exports = function (argv, soEmitter) {
 
     let sSockets = {}
@@ -54,6 +64,7 @@ module.exports = function (argv, soEmitter) {
             id: ws_id
         }))
         sSocket.on('data', (data) => {
+            console.log(Uint8ArrayToString(data))
             wsClient.send(JSON.stringify({
                 id: ws_id,
                 cmd: 'received',
