@@ -69,8 +69,13 @@ module.exports = function (argv, soEmitter) {
     ws.on('error', (e) => {
         //throw e
         console.error(e)
+        if (ws.readyState != WebSocket.OPEN) {
+            ws.close()
+        }
+        ws = new WebSocket('ws://' + host + ':' + port)
     })
     ws.on('end', () => {
         console.log('websocket connection ended.')
+        ws = new WebSocket('ws://' + host + ':' + port)
     })
 }
