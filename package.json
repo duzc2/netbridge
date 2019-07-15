@@ -6,7 +6,8 @@
   "scripts": {
     "trans": "node netbridge -l 80 -t www.baidu.com:80",
     "server": "node netbridge -l 80 -s 9999",
-    "client": "node netbridge -c 9999 -t www.aliyun.com:80"
+    "client": "node netbridge -c 9999 -t www.aliyun.com:80",
+    "ct": "node netbridge -c www.areyeshot.com:8550 -t 9080"
   },
   "license": "MIT",
   "dependencies": {

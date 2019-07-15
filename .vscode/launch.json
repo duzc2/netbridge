@@ -21,5 +21,11 @@
         "name": "客户端 9999>百度",
         "program": "${workspaceFolder}\\netbridge.js",
         "args": ["-c", "9999", "-t", "www.baidu.com:80"]
+    }, {
+        "type": "node",
+        "request": "launch",
+        "name": "客户端 s8550>9080",
+        "program": "${workspaceFolder}\\netbridge.js",
+        "args": ["-c", "www.areyeshot.com:8550", "-t", "9080"]
     }]
 }
